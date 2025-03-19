@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVeritas - Plataforma de Verificação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌿 EcoVeritas</h1>
+        <p>Plataforma de Consulta e Verificação de Empresas</p>
+    </header>
+
+    <main class="plataforma-container">
+
+        <!-- Área de Busca -->
+        <section class="busca-section">
+            <h2>🔍 Busque por uma Empresa</h2>
+            <div class="busca-box">
+                <input type="text" id="buscaInput" placeholder="Digite o nome da empresa...">
+                <button onclick="buscarEmpresa()">Buscar</button>
+            </div>
+            <div id="resultadoBusca" class="resultado"></div>
+        </section>
+
+        <!-- Área de Login -->
+        <section class="login-section">
+            <h2>🔐 Acesso à Conta</h2>
+            <form onsubmit="fazerLogin(event)">
+                <input type="email" id="email" placeholder="Seu e-mail" required>
+                <input type="password" id="senha" placeholder="Sua senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="dica-login">Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+        </section>
+
+        <!-- Informativo ODS -->
+        <section class="ods-section">
+            <h2>🌍 O que são as ODS?</h2>
+            <p>As <strong>ODS (Objetivos de Desenvolvimento Sustentável)</strong> são uma iniciativa da ONU com 17 metas globais para erradicar a pobreza, proteger o meio ambiente e garantir paz e prosperidade até 2030.</p>
+            <ul>
+                <li>✔️ Erradicação da pobreza</li>
+                <li>✔️ Educação de qualidade</li>
+                <li>✔️ Igualdade de gênero</li>
+                <li>✔️ Ação contra a mudança global do clima</li>
+                <li>✔️ Trabalho decente e crescimento econômico</li>
+                <!-- Adicione outros conforme quiser -->
+            </ul>
+            <a href="https://brasil.un.org/pt-br/sdgs" target="_blank" class="link-ods">Saiba mais sobre as ODS</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EcoVeritas | Por uma economia responsável 🌍</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
