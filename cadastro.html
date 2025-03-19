@@ -33,11 +33,11 @@
             <button type="submit">Cadastrar</button>
         </form>
 
-        <p class="login-link">Já tem uma conta? <a href="#">Faça login</a></p>
+        <p class="login-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 EcoVeritas | Por uma economia responsável 🌍</p>
+        <p>&copy; 2025 EcoVeritas | Por uma economia responsável 🌍</p>
     </footer>
 
     <script>
@@ -63,11 +63,11 @@
                 })
             })
             .then(response => response.json())
-            .then(data => {
-                console.log('Sucesso:', data);
-                alert('Cadastro realizado com sucesso!');
-                document.getElementById('formCadastro').reset();
-            })
+                .then(data => {
+                    alert('Usuário cadastrado com sucesso!');
+                    // Redireciona para a página de busca
+                    window.location.href = 'buscar.html';
+                })
             .catch(error => {
                 console.error('Erro:', error);
                 alert('Ocorreu um erro ao cadastrar. Tente novamente.');

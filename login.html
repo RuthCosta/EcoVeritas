@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EcoVeritas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌿 EcoVeritas</h1>
+        <p>Login de Usuário</p>
+    </header>
+
+    <section class="login-form">
+        <h2>Acesse sua conta</h2>
+        <form id="formLogin">
+            <div class="form-group">
+                <label for="emailLogin">E-mail:</label>
+                <input type="email" id="emailLogin" name="emailLogin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senhaLogin">Senha:</label>
+                <input type="password" id="senhaLogin" name="senhaLogin" required>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p class="cadastro-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 EcoVeritas | Por uma economia responsável 🌍</p>
+    </footer>
+
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('emailLogin').value;
+            const senha = document.getElementById('senhaLogin').value;
+
+            // Faz a consulta no Back4App
+            fetch(`https://parseapi.back4app.com/classes/Users?where=${encodeURIComponent(JSON.stringify({email: email, senha: senha}))}`, {
+                method: 'GET',
+                headers: {
+                    'X-Parse-Application-Id': 'Kj7UT2t7F5I3SqwLfPUbliTQWzOaPZcNhKcsrBK6', 
+                    'X-Parse-REST-API-Key': 'aBQFpVwctUH4V3RVl4k1vNkhWS7xgbrYK0SssE7T', 
+                }
+            })
+            .then(response => response.json())
+                .then(data => {
+                    if (data.results.length > 0) {
+                        alert('Login bem-sucedido! Seja bem-vindo(a), ' + data.results[0].nome + '!');
+                        // Redireciona para a página de busca após login
+                        window.location.href = 'buscar.html';
+                    } else {
+                        alert('E-mail ou senha incorretos.');
+                    }
+                })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro na conexão. Tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>

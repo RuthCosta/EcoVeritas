@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Empresas - EcoVeritas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌿 EcoVeritas</h1>
+        <p>Cadastro de Empresas para Análise ODS</p>
+    </header>
+
+    <section class="empresa-form">
+        <h2>Cadastrar uma Empresa</h2>
+        <form id="formEmpresa">
+            <div class="form-group">
+                <label for="nomeEmpresa">Nome da Empresa:</label>
+                <input type="text" id="nomeEmpresa" name="nomeEmpresa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailResponsavel">E-mail para Notificação:</label>
+                <input type="email" id="emailResponsavel" name="emailResponsavel" required>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div id="mensagem" class="mensagem-aguarde" style="display: none;">
+            <p>✅ Cadastro realizado! Estamos analisando os dados da empresa.<br>
+            🔔 Você será notificado por e-mail assim que a análise estiver concluída.<br><br>
+            Isso pode levar algum tempo, fique tranquilo!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 EcoVeritas | Por uma economia responsável 🌍</p>
+    </footer>
+
+    <script src="cadastro-empresa.js"></script>
+</body>
+</html>
